@@ -1,0 +1,690 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arul Raj | UI/UX Designer</title>
+    <meta name="description" content="Extraordinary UI/UX Designer creating immersive digital experiences">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="styles.css" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        poppins: ['Poppins', 'sans-serif'],
+                    },
+                    colors: {
+                        primary: '#212121',
+                        secondary: '#C18B43',
+                        dark: '#212121',
+                        light: '#f8fafc',
+                    },
+                    animation: {
+                        'float': 'float 6s ease-in-out infinite',
+                        'float-reverse': 'float-reverse 5s ease-in-out infinite',
+                        'spin-slow': 'spin 20s linear infinite',
+                    },
+                    keyframes: {
+                        float: {
+                            '0%, 100%': { transform: 'translateY(0)' },
+                            '50%': { transform: 'translateY(-20px)' },
+                        },
+                        'float-reverse': {
+                            '0%, 100%': { transform: 'translateY(0)' },
+                            '50%': { transform: 'translateY(20px)' },
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="font-poppins bg-light text-dark overflow-x-hidden">
+    <!-- Preloader -->
+    <div id="preloader" class="fixed inset-0 bg-primary z-50 flex items-center justify-center transition-opacity duration-500">
+        <div class="animate-spin-slow text-6xl text-white">
+            <i class="fas fa-atom"></i>
+        </div>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="fixed w-full py-6 z-40 transition-all duration-300" id="navbar">
+        <div class="container mx-auto px-6 flex justify-between items-center">
+            <a href="#" class="text-2xl font-bold text-primary">Arul<span class="text-secondary">Raj</span></a>
+            <div class="hidden md:flex space-x-10">
+                <a href="#home" class="nav-link hover:text-primary transition">Home</a>
+                <a href="#about" class="nav-link hover:text-primary transition">About</a>
+                <a href="#skills" class="nav-link hover:text-primary transition">Skills</a>
+                <a href="#work" class="nav-link hover:text-primary transition">Work</a>
+                <a href="#testimonials" class="nav-link hover:text-primary transition">Testimonials</a>
+                <a href="#contact" class="nav-link hover:text-primary transition">Contact</a>
+            </div>
+            <button id="mobile-menu-button" class="md:hidden text-2xl focus:outline-none">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Mobile Menu -->
+    <div id="mobile-menu" class="fixed inset-0 bg-dark bg-opacity-90 z-30 hidden flex items-center justify-center">
+        <div class="text-center space-y-10">
+            <a href="#home" class="block text-3xl text-white hover:text-primary transition nav-link">Home</a>
+            <a href="#about" class="block text-3xl text-white hover:text-primary transition nav-link">About</a>
+            <a href="#skills" class="block text-3xl text-white hover:text-primary transition nav-link">Skills</a>
+            <a href="#work" class="block text-3xl text-white hover:text-primary transition nav-link">Work</a>
+            <a href="#testimonials" class="block text-3xl text-white hover:text-primary transition nav-link">Testimonials</a>
+            <a href="#contact" class="block text-3xl text-white hover:text-primary transition nav-link">Contact</a>
+            <button id="close-menu-button" class="mt-10 text-white text-2xl">
+                <i class="fas fa-times"></i>
+            </button>
+        </div>
+    </div>
+
+    <!-- Hero Section -->
+    <section id="home" class="min-h-screen flex items-center relative overflow-hidden pt-20">
+        <div class="absolute w-96 h-96 rounded-full bg-primary opacity-10 -top-64 -left-64"></div>
+        <div class="absolute w-96 h-96 rounded-full bg-secondary opacity-10 -bottom-64 -right-64"></div>
+        
+        <div class="container mx-auto px-6 flex flex-col md:flex-row items-center">
+            <div class="md:w-1/2 mb-16 ms-20 md:mb-0">
+                <h4 class="text-primary font-medium mb-4 animate-fade-in">UI/UX DESIGNER</h4>
+                <h1 class="text-5xl md:text-7xl font-bold mb-6 animate-fade-in">Hi, I'm <span class="text-primary">Arul</span> Raj</h1>
+                <p class="text-lg md:text-xl mb-8 text-gray-600 animate-fade-in">Every Pixcel has a purpose</p>
+                <div class="flex space-x-4 animate-fade-in">
+                    <a href="#work" class="bg-primary hover:bg-primary-dark text-white px-8 py-3 rounded-full font-medium transition-all transform hover:scale-105 shadow-lg hover:shadow-xl">View Work</a>
+                    <a href="#contact" class="border-2 border-dark hover:border-primary text-dark hover:text-primary px-8 py-3 rounded-full font-medium transition-all transform hover:scale-105">Contact Me</a>
+                </div>
+            </div>
+            <div class="md:w-1/2 relative">
+                <div class="relative max-w-md mx-auto">
+                    <img src="images/hero2.jpg" 
+                         alt="UI/UX Designer" 
+                         class="rounded-2xl shadow-2xl z-10 relative animate-float h-full">
+                    <div class="absolute -bottom-8 -left-8 w-full h-full border-4 border-primary rounded-2xl z-0 animate-float-reverse"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-20 bg-white">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16">
+                <h4 class="text-primary font-medium mb-4">GET TO KNOW ME</h4>
+                <h2 class="text-4xl font-bold mb-6">About Me</h2>
+                <div class="w-20 h-1 bg-primary mx-auto"></div>
+            </div>
+            
+            <div class="flex flex-col md:flex-row items-center">
+                <div class="md:w-1/3 mb-10 md:mb-0 flex justify-center">
+                    <div class="relative">
+                        <img src="images/Hero.jpg" 
+                             alt="Alex Ray" 
+                             class="rounded-2xl w-64 h-64 object-cover shadow-xl">
+                        <div class="absolute -bottom-5 -right-5 bg-primary text-white p-4 rounded-full shadow-lg">
+                            <i class="fas fa-pen-fancy text-2xl"></i>
+                        </div>
+                    </div>
+                </div>
+                <div class="md:w-2/3 me-20 md:pl-16">
+                    <h3 class="text-2xl font-bold mb-6">Who am I?</h3>
+                    <p class="text-gray-600 mb-6 leading-relaxed">
+                       I'm a second-year BCA student with a passion for UI/UX design and front-end development. I prioritize design over development — specializing in logos, posters, UI/UX for apps and websites. I’ve completed internships at Octanet and Altruistry, where I worked on real-world projects, including designing the complete UI/UX and branding for an educational platform called Skill Link.
+
+                    </p>
+                    <p class="text-gray-600 mb-8 leading-relaxed">
+                       I co-founded COOKIE, a tech-powered creative studio, with a team of like-minded friends. We've already delivered 15+ projects — turning ideas into products, and screens into stories.
+
+                    </p>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
+                        <div class="flex items-center">
+                            <div class="bg-primary bg-opacity-10 p-3 rounded-full mr-4">
+                                <i class="fas fa-user-tie text-primary"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold">Name</h4>
+                                <p class="text-gray-600">Arul Raj</p>
+                            </div>
+                        </div>
+                        <div class="flex items-center">
+                            <div class="bg-primary bg-opacity-10 p-3 rounded-full mr-4">
+                                <i class="fas fa-envelope text-primary"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold">Email</h4>
+                                <p class="text-gray-600">arulrajmurugan@outlook.com</p>
+                            </div>
+                        </div>
+                        <div class="flex items-center">
+                            <div class="bg-primary bg-opacity-10 p-3 rounded-full mr-4">
+                                <i class="fas fa-calendar-alt text-primary"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold">Experience</h4>
+                                <p class="text-gray-600">Fresher</p>
+                            </div>
+                        </div>
+                        <div class="flex items-center">
+                            <div class="bg-primary bg-opacity-10 p-3 rounded-full mr-4">
+                                <i class="fas fa-phone-alt text-primary"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold">Phone</h4>
+                                <p class="text-gray-600">+91 9003227475</p>
+                            </div>
+                        </div>
+                    </div>
+                    <a href="#" class="inline-flex items-center text-primary font-medium">
+                        Download CV <i class="fas fa-download ml-2"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="py-20 bg-gray-50">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16">
+                <h4 class="text-primary font-medium mb-4">MY EXPERTISE</h4>
+                <h2 class="text-4xl font-bold mb-6">Skills & Tools</h2>
+                <div class="w-20 h-1 bg-primary mx-auto"></div>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-12 ms-16 me-16">
+                <div>
+                    <h3 class="text-2xl font-bold mb-8">Design Skills</h3>
+                    <div class="space-y-6">
+                        <div>
+                            <div class="flex justify-between mb-2">
+                                <span class="font-medium">UI/UX Design</span>
+                                <span class="text-primary">95%</span>
+                            </div>
+                            <div class="w-full bg-gray-200 rounded-full h-2">
+                                <div class="bg-primary h-2 rounded-full skill-bar" data-width="95%"></div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="flex justify-between mb-2">
+                                <span class="font-medium">User Research</span>
+                                <span class="text-primary">90%</span>
+                            </div>
+                            <div class="w-full bg-gray-200 rounded-full h-2">
+                                <div class="bg-primary h-2 rounded-full skill-bar" data-width="90%"></div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="flex justify-between mb-2">
+                                <span class="font-medium">Wireframing</span>
+                                <span class="text-primary">92%</span>
+                            </div>
+                            <div class="w-full bg-gray-200 rounded-full h-2">
+                                <div class="bg-primary h-2 rounded-full skill-bar" data-width="92%"></div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="flex justify-between mb-2">
+                                <span class="font-medium">Prototyping</span>
+                                <span class="text-primary">94%</span>
+                            </div>
+                            <div class="w-full bg-gray-200 rounded-full h-2">
+                                <div class="bg-primary h-2 rounded-full skill-bar" data-width="94%"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div>
+                    <h3 class="text-2xl font-bold mb-8">Technical Skills</h3>
+                    <div class="space-y-6">
+                        <div>
+                            <div class="flex justify-between mb-2">
+                                <span class="font-medium">Figma</span>
+                                <span class="text-primary">90%</span>
+                            </div>
+                            <div class="w-full bg-gray-200 rounded-full h-2">
+                                <div class="bg-primary h-2 rounded-full skill-bar" data-width="90%"></div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="flex justify-between mb-2">
+                                <span class="font-medium">Adobe XD</span>
+                                <span class="text-primary">70%</span>
+                            </div>
+                            <div class="w-full bg-gray-200 rounded-full h-2">
+                                <div class="bg-primary h-2 rounded-full skill-bar" data-width="70%"></div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="flex justify-between mb-2">
+                                <span class="font-medium">Framer</span>
+                                <span class="text-primary">60%</span>
+                            </div>
+                            <div class="w-full bg-gray-200 rounded-full h-2">
+                                <div class="bg-primary h-2 rounded-full skill-bar" data-width="60%"></div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="flex justify-between mb-2">
+                                <span class="font-medium">HTML/CSS</span>
+                                <span class="text-primary">80%</span>
+                            </div>
+                            <div class="w-full bg-gray-200 rounded-full h-2">
+                                <div class="bg-primary h-2 rounded-full skill-bar" data-width="80%"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="mt-16">
+                <h3 class="text-2xl font-bold mb-8 text-center">Tools I Use</h3>
+                <div class="flex flex-wrap justify-center gap-8">
+                    <div class="tool-item bg-white p-6 rounded-xl shadow-md hover:shadow-xl transition-shadow transform hover:-translate-y-2 justify-content-center"  id="tool-box">
+                        <i class="fab fa-figma text-4xl text-primary mb-2"></i>
+                        <p class="font-medium">Figma</p>
+                    </div>
+                    <div class="tool-item bg-white p-6 rounded-xl shadow-md hover:shadow-xl transition-shadow transform hover:-translate-y-2" id="tool-box">
+                        <i class="fab fa-adobe text-4xl text-primary mb-2"></i>
+                        <p class="font-medium">Adobe XD</p>
+                    </div>
+                    <div class="tool-item bg-white p-6 rounded-xl shadow-md hover:shadow-xl transition-shadow transform hover:-translate-y-2" id="tool-box">
+                        <i class="fas fa-pencil-ruler text-4xl text-primary mb-2"></i>
+                        <p class="font-medium">Sketch</p>
+                    </div>
+                    <div class="tool-item bg-white p-6 rounded-xl shadow-md hover:shadow-xl transition-shadow transform hover:-translate-y-2" id="tool-box">
+                        <i class="fa-brands fa-behance text-4xl text-primary mb-2"></i>
+                        <p class="font-medium">Behance</p>
+                    </div>
+                    <div class="tool-item bg-white p-6 rounded-xl shadow-md hover:shadow-xl transition-shadow transform hover:-translate-y-2" id="tool-box">
+                        <i class="fab fa-dribbble text-4xl text-primary mb-2"></i>
+                        <p class="font-medium">Dribble</p>
+                    </div>
+                    <div class="tool-item bg-white p-6 rounded-xl shadow-md hover:shadow-xl transition-shadow transform hover:-translate-y-2" id="tool-box">
+                        <i class="fab fa-html5 text-4xl text-primary mb-2"></i>
+                        <p class="font-medium">HTML5</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Work Section -->
+    <section id="work" class="py-20 bg-white">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16">
+                <h4 class="text-primary font-medium mb-4">MY PORTFOLIO</h4>
+                <h2 class="text-4xl font-bold mb-6">Featured Work</h2>
+                <div class="w-20 h-1 bg-primary mx-auto"></div>
+            </div>
+            
+            <div class="flex justify-center mb-12">
+                <div class="inline-flex rounded-md shadow-sm">
+                    <button type="button" class="px-6 py-3 text-sm font-medium rounded-l-lg border border-gray-200 bg-primary text-white focus:z-10 focus:outline-none filter-button" data-filter="all">
+                        All
+                    </button>
+                    <button type="button" class="px-6 py-3 text-sm font-medium border-t border-b border-gray-200 hover:bg-gray-50 focus:z-10 focus:outline-none filter-button" data-filter="ui">
+                        UI Design
+                    </button>
+                    <button type="button" class="px-6 py-3 text-sm font-medium border-t border-b border-gray-200 hover:bg-gray-50 focus:z-10 focus:outline-none filter-button" data-filter="ux">
+                        UX Research
+                    </button>
+                    <button type="button" class="px-6 py-3 text-sm font-medium rounded-r-lg border border-gray-200 hover:bg-gray-50 focus:z-10 focus:outline-none filter-button" data-filter="branding">
+                        Branding
+                    </button>
+                </div>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Project 1 -->
+                <div class="portfolio-item group" data-category="ui">
+                    <div class="relative overflow-hidden rounded-xl shadow-lg transition-all duration-300 transform group-hover:shadow-2xl">
+                        <img src="images/Skill_Link.png" 
+                             alt="E-learning Platform" 
+                             class="w-full h-64 object-cover transition-transform duration-500 group-hover:scale-110">
+                        <div class="absolute inset-0 bg-primary bg-opacity-80 flex flex-col justify-center items-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 p-6 text-center">
+                            <h3 class="text-2xl font-bold text-white mb-2">E-learning Platform</h3>
+                            <p class="text-white mb-4">Modern UI design for E-learning Platform</p>
+                            <a href="#" class="text-white border-2 border-white px-4 py-2 rounded-full hover:bg-white hover:text-primary transition">View Case Study</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Project 2 -->
+                <div class="portfolio-item group" data-category="ux">
+                    <div class="relative overflow-hidden rounded-xl shadow-lg transition-all duration-300 transform group-hover:shadow-2xl">
+                        <img src="images/Cookie.png" 
+                             alt="Business Website" 
+                             class="w-full h-64 object-cover transition-transform duration-500 group-hover:scale-110">
+                        <div class="absolute inset-0 bg-primary bg-opacity-80 flex flex-col justify-center items-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 p-6 text-center">
+                            <h3 class="text-2xl font-bold text-white mb-2">Business Website</h3>
+                            <p class="text-white mb-4">User research and UX design for Business Website</p>
+                            <a href="#" class="text-white border-2 border-white px-4 py-2 rounded-full hover:bg-white hover:text-primary transition">View Case Study</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Project 3 -->
+                <div class="portfolio-item group" data-category="ui">
+                    <div class="relative overflow-hidden rounded-xl shadow-lg transition-all duration-300 transform group-hover:shadow-2xl">
+                        <img src="images/Iqbridge.png" 
+                             alt="Task Management App" 
+                             class="w-full h-64 object-cover transition-transform duration-500 group-hover:scale-110">
+                        <div class="absolute inset-0 bg-primary bg-opacity-80 flex flex-col justify-center items-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 p-6 text-center">
+                            <h3 class="text-2xl font-bold text-white mb-2">Landing page</h3>
+                            <p class="text-white mb-4">Minimalist UI design for Tutor Center</p>
+                            <a href="#" class="text-white border-2 border-white px-4 py-2 rounded-full hover:bg-white hover:text-primary transition">View Case Study</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Project 4 -->
+                 <div class="portfolio-item group" data-category="branding">
+                    <div class="relative overflow-hidden rounded-xl shadow-lg transition-all duration-300 transform group-hover:shadow-2xl">
+                        <img src="images/Cookie_ogo.png" 
+                             alt=" Brand Logo Identity" 
+                             class="w-full h-64 object-cover transition-transform duration-500 group-hover:scale-110">
+                        <div class="absolute inset-0 bg-primary bg-opacity-80 flex flex-col justify-center items-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 p-6 text-center">
+                            <h3 class="text-2xl font-bold text-white mb-2">Business Logo</h3>
+                            <p class="text-white mb-4">Complete visual identity for a tech startup</p>
+                            <a href="#" class="text-white border-2 border-white px-4 py-2 rounded-full hover:bg-white hover:text-primary transition">View Case Study</a>
+                        </div>
+                    </div>
+                </div>
+                
+                
+                <!-- Project 5 -->
+                <div class="portfolio-item group" data-category="ui">
+                    <div class="relative overflow-hidden rounded-xl shadow-lg transition-all duration-300 transform group-hover:shadow-2xl">
+                        <img src="images/Velu&Sons.png" 
+                             alt="Healthcare Portal" 
+                             class="w-full h-64 object-cover transition-transform duration-500 group-hover:scale-110">
+                        <div class="absolute inset-0 bg-primary bg-opacity-80 flex flex-col justify-center items-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 p-6 text-center">
+                            <h3 class="text-2xl font-bold text-white mb-2">Vels&Sons Cashew</h3>
+                            <p class="text-white mb-4">Business Website for Food Company</p>
+                            <a href="#" class="text-white border-2 border-white px-4 py-2 rounded-full hover:bg-white hover:text-primary transition">View Case Study</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Project 6 -->
+                <div class="portfolio-item group" data-category="branding">
+                    <div class="relative overflow-hidden rounded-xl shadow-lg transition-all duration-300 transform group-hover:shadow-2xl">
+                        <img src="images/Broucher.jpg" 
+                             alt="Tech Conference Branding" 
+                             class="w-full h-64 object-cover transition-transform duration-500 group-hover:scale-110">
+                        <div class="absolute inset-0 bg-primary bg-opacity-80 flex flex-col justify-center items-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 p-6 text-center">
+                            <h3 class="text-2xl font-bold text-white mb-2">Tech Company Broucher</h3>
+                            <p class="text-white mb-4">Branding  Broucher for Tech Company</p>
+                            <a href="#" class="text-white border-2 border-white px-4 py-2 rounded-full hover:bg-white hover:text-primary transition">View Case Study</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="text-center mt-12">
+                <a href="#" class="inline-block bg-primary hover:bg-primary-dark text-white px-8 py-3 rounded-full font-medium transition-all transform hover:scale-105 shadow-lg hover:shadow-xl">
+                    View All Projects <i class="fas fa-arrow-right ml-2"></i>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section id="testimonials" class="py-20 bg-gray-50">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16">
+                <h4 class="text-primary font-medium mb-4">CLIENT FEEDBACK</h4>
+                <h2 class="text-4xl font-bold mb-6">Testimonials</h2>
+                <div class="w-20 h-1 bg-primary mx-auto"></div>
+            </div>
+            
+            <div class="relative">
+                <div class="testimonial-slider overflow-hidden">
+                    <div class="flex transition-transform duration-500 ease-in-out" id="slider">
+                        <!-- Testimonial 1 -->
+                        <div class="w-full flex-shrink-0 px-4">
+                            <div class="bg-white p-8 rounded-xl shadow-md">
+                                <div class="flex items-center mb-6">
+                                    <img src="images/Iqbridge_logo.png" 
+                                         alt="Sarah Johnson" 
+                                         class="w-16 h-16 rounded-full object-cover mr-4">
+                                    <div>
+                                        <h4 class="font-bold">Robin Singha</h4>
+                                        <p class="text-gray-600">CEO, Iq Bridge</p>
+                                    </div>
+                                </div>
+                                <p class="text-gray-600 mb-6 italic">
+                                    The User Interface and User Experice for the Product was Exceptional and it found easy to User When the Book Applications
+                                </p>
+                                <div class="flex text-yellow-400">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Testimonial 2 -->
+                        <div class="w-full flex-shrink-0 px-4">
+                            <div class="bg-white p-8 rounded-xl shadow-md">
+                                <div class="flex items-center mb-6">
+                                    <img src="images/Cookie_logo.png" 
+                                         alt="Michael Chen" 
+                                         class="w-16 h-16 rounded-full object-cover mr-4">
+                                    <div>
+                                        <h4 class="font-bold">Vignesh Karthikeyan</h4>
+                                        <p class="text-gray-600">CEO, Cookie inc.</p>
+                                    </div>
+                                </div>
+                                <p class="text-gray-600 mb-6 italic">
+                                    "Arul's design work for our startup was outstanding. He transformed our ideas into a stunning visual identity that truly represents our brand. The attention to detail and creativity he brought to the project exceeded our expectations."
+                                </p>
+                                <div class="flex text-yellow-400">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Testimonial 3 -->
+                        <div class="w-full flex-shrink-0 px-4">
+                            <div class="bg-white p-8 rounded-xl shadow-md">
+                                <div class="flex items-center mb-6">
+                                    <img src="images/Altruistry.png" 
+                                         alt="Emily Rodriguez" 
+                                         class="w-16 h-16 rounded-full object-cover mr-4">
+                                    <div>
+                                        <h4 class="font-bold">Siva Sakthi</h4>
+                                        <p class="text-gray-600">Founder, Altruistry</p>
+                                    </div>
+                                </div>
+                                <p class="text-gray-600 mb-6 italic">
+                                    "Arul's work on our project was exceptional. He not only delivered a beautiful design but also ensured it was user-friendly and aligned with our brand vision. His professionalism and creativity made the entire process enjoyable."
+                                </p>
+                                <div class="flex text-yellow-400">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star-half-alt"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <button id="prev-testimonial" class="absolute left-0 top-1/2 transform -translate-y-1/2 -ml-4 bg-white p-3 rounded-full shadow-md hover:bg-primary hover:text-white transition">
+                    <i class="fas fa-chevron-left"></i>
+                </button>
+                <button id="next-testimonial" class="absolute right-0 top-1/2 transform -translate-y-1/2 -mr-4 bg-white p-3 rounded-full shadow-md hover:bg-primary hover:text-white transition">
+                    <i class="fas fa-chevron-right"></i>
+                </button>
+            </div>
+            
+            <div class="flex justify-center mt-8 space-x-2" id="testimonial-dots">
+                <button class="w-3 h-3 rounded-full bg-gray-300 dot-button" data-index="0"></button>
+                <button class="w-3 h-3 rounded-full bg-gray-300 dot-button" data-index="1"></button>
+                <button class="w-3 h-3 rounded-full bg-gray-300 dot-button" data-index="2"></button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-20 bg-white">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16">
+                <h4 class="text-primary font-medium mb-4">GET IN TOUCH</h4>
+                <h2 class="text-4xl font-bold mb-6">Contact Me</h2>
+                <div class="w-20 h-1 bg-primary mx-auto"></div>
+            </div>
+            
+            <div class="flex flex-col md:flex-row">
+                <div class="md:w-1/2 mb-12 md:mb-0 md:pr-8">
+                    <h3 class="text-2xl font-bold mb-6">Let's Talk About Your Project</h3>
+                    <p class="text-gray-600 mb-8 leading-relaxed">
+                        Have a project in mind or want to discuss potential collaboration? Feel free to reach out. I'm always open to talking about design, new ideas, and opportunities to create something amazing together.
+                    </p>
+                    
+                    <div class="space-y-6">
+                        <div class="flex items-start">
+                            <div class="bg-primary bg-opacity-10 p-3 rounded-full mr-4">
+                                <i class="fas fa-map-marker-alt text-primary"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold mb-1">Location</h4>
+                                <p class="text-gray-600">Chennai , IND</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start">
+                            <div class="bg-primary bg-opacity-10 p-3 rounded-full mr-4">
+                                <i class="fas fa-envelope text-primary"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold mb-1">Email</h4>
+                                <p class="text-gray-600">arulrajmurugan@outlook.com</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start">
+                            <div class="bg-primary bg-opacity-10 p-3 rounded-full mr-4">
+                                <i class="fas fa-phone-alt text-primary"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold mb-1">Phone</h4>
+                                <p class="text-gray-600">+91 9003227475</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="mt-10">
+                        <h4 class="font-bold mb-4">Follow Me</h4>
+                        <div class="flex space-x-4">
+                            <a href="#" class="w-10 h-10 rounded-full bg-gray-100 flex items-center justify-center text-gray-600 hover:bg-primary hover:text-white transition">
+                                <i class="fab fa-dribbble"></i>
+                            </a>
+                            <a href="#" class="w-10 h-10 rounded-full bg-gray-100 flex items-center justify-center text-gray-600 hover:bg-primary hover:text-white transition">
+                                <i class="fab fa-behance"></i>
+                            </a>
+                            <a href="#" class="w-10 h-10 rounded-full bg-gray-100 flex items-center justify-center text-gray-600 hover:bg-primary hover:text-white transition">
+                                <i class="fab fa-linkedin-in"></i>
+                            </a>
+                            <a href="#" class="w-10 h-10 rounded-full bg-gray-100 flex items-center justify-center text-gray-600 hover:bg-primary hover:text-white transition">
+                                <i class="fab fa-twitter"></i>
+                            </a>
+                            <a href="#" class="w-10 h-10 rounded-full bg-gray-100 flex items-center justify-center text-gray-600 hover:bg-primary hover:text-white transition">
+                                <i class="fab fa-instagram"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="md:w-1/2">
+                    <form id="contact-form" class="space-y-6" mailto="arulrajmurugan@outlook.com">
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                            <div>
+                                <label for="name" class="block mb-2 font-medium">Your Name</label>
+                                <input type="text" id="name" name="name" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent" required>
+                            </div>
+                            <div>
+                                <label for="email" class="block mb-2 font-medium">Your Email</label>
+                                <input type="email" id="email" name="email" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent" required>
+                            </div>
+                        </div>
+                        <div>
+                            <label for="subject" class="block mb-2 font-medium">Subject</label>
+                            <input type="text" id="subject" name="subject" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent" required>
+                        </div>
+                        <div>
+                            <label for="message" class="block mb-2 font-medium">Message</label>
+                            <textarea id="message" name="message" rows="5" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent" required></textarea>
+                        </div>
+                        <button type="submit" class="bg-primary hover:bg-primary-dark text-white px-8 py-3 rounded-full font-medium transition-all transform hover:scale-105 shadow-lg hover:shadow-xl w-full md:w-auto">
+                            Send Message <i class="fas fa-paper-plane ml-2"></i>
+                        </button>
+                    </form>
+                    
+                    <div id="form-success" class="mt-6 p-4 bg-green-100 text-green-700 rounded-lg hidden">
+                        Your message has been sent successfully! I'll get back to you soon.
+                    </div>
+                    
+                    <div id="form-error" class="mt-6 p-4 bg-red-100 text-red-700 rounded-lg hidden">
+                        There was an error sending your message. Please try again later.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="py-10 bg-dark text-white">
+        <div class="container mx-auto px-6">
+            <div class="flex flex-col md:flex-row justify-between items-center">
+                <div class="mb-6 md:mb-0">
+                    <a href="#" class="text-2xl font-bold text-white">Arul<span class="text-primary">Raj</span></a>
+                    <p class="mt-2 text-gray-400">Creating extraordinary digital experiences</p>
+                </div>
+                <div class="flex space-x-6">
+                    <a href="#" class="text-gray-400 hover:text-white transition">
+                        <i class="fab fa-dribbble"></i>
+                    </a>
+                    <a href="#" class="text-gray-400 hover:text-white transition">
+                        <i class="fab fa-behance"></i>
+                    </a>
+                    <a href="#" class="text-gray-400 hover:text-white transition">
+                        <i class="fab fa-linkedin-in"></i>
+                    </a>
+                    <a href="#" class="text-gray-400 hover:text-white transition">
+                        <i class="fab fa-twitter"></i>
+                    </a>
+                    <a href="#" class="text-gray-400 hover:text-white transition">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                </div>
+            </div>
+            <div class="border-t border-gray-800 mt-10 pt-6 flex flex-col md:flex-row justify-between items-center">
+                <p class="text-gray-400 mb-4 md:mb-0">© 2023 Arul Raj. All rights reserved.</p>
+                <div class="flex space-x-6">
+                    <a href="#" class="text-gray-400 hover:text-white transition">Privacy Policy</a>
+                    <a href="#" class="text-gray-400 hover:text-white transition">Terms of Service</a>
+                    <a href="#" class="text-gray-400 hover:text-white transition">Cookies</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <button id="back-to-top" class="fixed bottom-8 right-8 bg-primary text-white p-3 rounded-full shadow-lg opacity-0 invisible transition-all duration-300">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <script src="script.js"></script>
+</body>
+</html>
