@@ -52,3 +52,11 @@
     align-items: center;
     justify-content: center;
 }
+#hero-button{
+    min-width: 130px;
+    text-align: center;
+    justify-content: start;
+}
+.Hero-button-box{
+    padding-right: 60px;
+}
